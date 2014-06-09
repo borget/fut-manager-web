@@ -1,6 +1,6 @@
 {
-  "name": "six-app",
-  "description": "Six Mobile App",
+  "name": "Fut-Manager",
+  "description": "Web Platform to manage sport tournaments",
   "main": "web.js",
   "version": "0.0.1",
   "private": true,

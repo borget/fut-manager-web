@@ -1,0 +1,39 @@
+body { padding-top:80px; }
+
+.modal-footer {   border-top: 0px; }
+
+.modal-content {
+    box-shadow: 0 5px 15px rgba(72, 138, 17, 0.5);
+}
+.modal-content {
+    background-clip: padding-box;
+    border-radius: 6px;
+    background-size:   cover;
+    background-image: url('../img/soccer.png');
+    background-repeat: no-repeat;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    
+    outline: 0 none;
+    position: relative;
+}
+
+.modal-header {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 15px;
+    color: #FFFFFF;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    min-height: 16.4286px;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.alert-danger {
+    background-color: #D5F6B0;
+    border-color: #ADE8B7;
+    color: #191E2F;
+}
