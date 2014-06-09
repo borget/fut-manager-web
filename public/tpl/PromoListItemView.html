@@ -1,0 +1,15 @@
+<a href="#promo/<%= _id %>" class="thumbnail plain">
+    <img src="<%= promoImg %>" height="150" width="75" alt="">
+    <h5><%= promoName %></h5>
+    
+    <p>
+    
+    
+    <% if (promoStatus === "0") { %>
+			<i class="icon-remove"></i> Promo deshabilitado
+	<%	} else if (promoStatus === "1") { %>
+			<i class="icon-ok"></i> Promo activo
+	<%	} %>
+	
+	</p>
+</a>

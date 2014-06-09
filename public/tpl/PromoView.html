@@ -1,0 +1,105 @@
+<div class="row">
+
+    <form id="promoForm" class="form-horizontal span12">
+
+
+        <fieldset>
+
+            <legend><b>Agrega un promo</b>
+				</legend>
+            <br/>
+
+            <div class="row">
+                <div class="span9">
+					<legend id="legend1">Paso 1</legend>
+					<br/>
+					<div id="step1" class="control-group">
+                        <label for="description" class="control-label">Carga de imagen:</label>
+
+                        <div class="controls">
+							<div id="extjs-upload-form"></div>
+                        </div>
+                    </div>
+					
+					<legend id="legend2">Paso 2</legend>
+					<br/>
+					
+                    <div id="step2" class="control-group">
+                        <label for="name" class="control-label">Nombre del promo:</label>
+
+                        <div class="controls">
+                            <input type="text" id="promoName" name="promoName" placeholder="Ponle un nombre a tu promo."/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div id="step2-1" class="control-group">
+                        <label for="name" class="control-label">Encabezado del Promo:</label>
+
+                        <div class="controls">
+                            <input type="text" id="promoHeader" name="promoHeader" placeholder="Agrega un encabezado a tu promo."/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div id="step2-2" class="control-group">
+                        <label for="name" class="control-label">Leyenda 1:</label>
+
+                        <div class="controls">
+                            <input type="text" id="promoP1" name="promoP1" placeholder="Agrega la leyenda #1."/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                    
+                    <div id="step2-3" class="control-group">
+                        <label for="name" class="control-label">Leyenda 2:</label>
+
+                        <div class="controls">
+                            <input type="text" id="promoP2" name="promoP2" placeholder="Agrega la leyenda #2."/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+                   
+
+                    <div id="step3" class="control-group">
+                        <label for="description" class="control-label">Publicar promo:</label>
+
+                        <div class="controls">
+                            <div class="btn-group" data-toggle="buttons">
+							  <label class="btn">
+								<input type="radio" name="promoStatus" id="option1" value="1"> Activo
+							  </label>
+							  <label class="btn">
+								<input type="radio" name="promoStatus" id="option2" value="0"> Desactivado
+							  </label>
+							</div>
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+
+            </div>
+			
+        </fieldset>
+
+        <div id="finalstep" class="form-actions">
+            <a href="#" class="btn btn-primary save">Guardar Promo</a>
+        </div>
+		<input type="hidden" id="promoImg" name="promoImg" value=""> 
+    </form>
+
+</div>
+
+
+
+<div class="row status-bar">
+    <div class="span12">
+        <div class="alert alert-success" style="display: none">
+            <b>Listo!</b> El promo ha sido guardado.
+        </div>
+    </div>
+</div>
+
+								
