@@ -1,6 +1,3 @@
-
 module.exports = {
-
-	'url' : 'mongodb://dev:Developer12@ds027738.mongolab.com:27738/sixdb'
-
+	'url' : 'mongodb://admin:M0ng0labpa$5@ds049219.mongolab.com:49219/fut-manager'
 };
