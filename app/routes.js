@@ -4,7 +4,6 @@ module.exports = function(app, passport) {
 	// HOME PAGE (with login links) ========
 	// =====================================
 	app.get('/', function(req, res) {
-		//res.render('index.ejs'); // load the index.ejs file
 		res.redirect('/login');
 	});
 
@@ -47,7 +46,7 @@ module.exports = function(app, passport) {
 	
 	
 	app.get('/home', isLoggedIn, function(req, res) {
-		res.render('landing-page.ejs', {
+		res.render('home.ejs', {
 			user : req.user // get the user out of session and pass to template
 		});
 	});
