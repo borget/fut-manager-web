@@ -1,10 +1,3 @@
-/*!
- * Author: Abdullah A Almsaeed
- * Date: 4 Jan 2014
- * Description:
- *      This file should be included in all pages
- !**/
-
 /*
  * Global variables. If you change any of these vars, don't forget 
  * to change the values in the less files!
@@ -14,22 +7,7 @@ var left_side_width = 220; //Sidebar width in pixels
 $(function() {
     "use strict";
 
-    //Enable sidebar toggle
-    $("[data-toggle='offcanvas']").click(function(e) {
-        e.preventDefault();
-
-        //If window is small enough, enable sidebar push menu
-        if ($(window).width() <= 992) {
-            $('.row-offcanvas').toggleClass('active');
-            $('.left-side').removeClass("collapse-left");
-            $(".right-side").removeClass("strech");
-            $('.row-offcanvas').toggleClass("relative");
-        } else {
-            //Else, enable content streching
-            $('.left-side').toggleClass("collapse-left");
-            $(".right-side").toggleClass("strech");
-        }
-    });
+    /*Enable sidebar toggle --> moved to utils.js
 
     //Add hover support for touch devices
     $('.btn').bind('touchstart', function() {

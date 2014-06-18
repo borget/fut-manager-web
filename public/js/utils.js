@@ -7,91 +7,28 @@ window.utils = {
 
         $.each(views, function(index, view) {
             if (window[view]) {
-                deferreds.push($.get('tpl/' + view + '.html', function(data) {
+                deferreds.push($.get('templates/' + view + '.html', function(data) {
                 window[view].prototype.template = _.template(data);
             }, "text"));
             } else {
-                alert(view + " not found");
+                console.log(view + " not found");
             }
         });
 
         $.when.apply(null, deferreds).done(callback);
     },
-
-    uploadFile: function (file, callbackSuccess) {
-        var self = this;
-        var data = new FormData();
-        data.append('file', file);
-        $.ajax({
-            url: 'api/upload.php',
-            type: 'POST',
-            data: data,
-            processData: false,
-            cache: false,
-            contentType: false
-        })
-        .done(function () {
-            console.log(file.name + " uploaded successfully");
-            callbackSuccess();
-        })
-        .fail(function () {
-            self.showAlert('Error!', 'An error occurred while uploading ' + file.name, 'alert-error');
-        });
-    },
-
-    displayValidationErrors: function (messages) {
-        for (var key in messages) {
-            if (messages.hasOwnProperty(key)) {
-                this.addValidationError(key, messages[key]);
-            }
+	
+	toggleSidebar: function (){
+		//If window is small enough, enable sidebar push menu
+        if ($(window).width() <= 992) {
+            $('.row-offcanvas').toggleClass('active');
+            $('.left-side').removeClass("collapse-left");
+            $(".right-side").removeClass("strech");
+            $('.row-offcanvas').toggleClass("relative");
+        } else {
+            //Else, enable content streching
+            $('.left-side').toggleClass("collapse-left");
+            $(".right-side").toggleClass("strech");
         }
-        this.showAlert('Warning!', 'Fix validation errors and try again', 'alert-warning');
-    },
-
-    addValidationError: function (field, message) {
-        var controlGroup = $('#' + field).parent().parent();
-        controlGroup.addClass('error');
-        $('.help-inline', controlGroup).html(message);
-    },
-
-    removeValidationError: function (field) {
-        var controlGroup = $('#' + field).parent().parent();
-        controlGroup.removeClass('error');
-        $('.help-inline', controlGroup).html('');
-    },
-
-    showAlert: function(title, text, klass) {
-        $('.alert').removeClass("alert-error alert-warning alert-success alert-info");
-        $('.alert').addClass(klass);
-        $('.alert').html('<strong>' + title + '</strong> ' + text);
-        $('.alert').show();
-    },
-
-    hideAlert: function() {
-        $('.alert').hide();
-    },
-    
-    authCallback: function (resultData) {
-		if(resultData.auth === "AUTH-SUCCEEDED") {
-			$.getScript('lib/extjs/file-upload.js', function() {
-			//loading ext-js script that uploads imgs.
-			}); 
-		} 		
-	},
-    
-    authenticate: function(callback) {
-		$.ajax({
-			  type: 'GET',
-			  url: "http://six-mobile-app.herokuapp.com/auth",
-			  dataType: "json",
-			  success: function(resultData) {
-				  callback(resultData);
-			  },
-			  error:function(jqXHR,error, errorThrown) { 
-				  alert("Error! al autenticar usuario.");
-			  }
-		});
-    }
-	
-	
+	}
 };
