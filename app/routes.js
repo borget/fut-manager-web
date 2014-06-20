@@ -1,5 +1,5 @@
+var players = require('./models/players');
 module.exports = function(app, passport) {
-
 	// =====================================
 	// HOME PAGE (with login links) ========
 	// =====================================
@@ -38,6 +38,8 @@ module.exports = function(app, passport) {
 		failureRedirect : '/login', // redirect back to the signup page if there is an error
 		failureFlash : true // allow flash messages
 	}));
+	
+	app.get('/players/:id', isLoggedIn, players.findPlayers);
 };
 
 // route middleware to make sure a user is logged in
