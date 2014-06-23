@@ -1,0 +1,19 @@
+remove all in ~/.ssh/id-rsa
+
+heroku keys:add
+
+eval $(ssh-agent)
+
+ssh-add -l
+
+ssh-add ~/.ssh/id_rsa
+
+###config file in ~/.ssh/
+
+Host heroku.com
+Hostname heroku.com 
+Port 22 
+IdentitiesOnly yes 
+IdentityFile ~/.ssh/id-rsa # location and name of your private key
+TCPKeepAlive yes 
+User root@HP-Pavilion-g6-Notebook-PC

@@ -37,8 +37,6 @@ app.configure(function () {
     app.use(express.errorHandler());
 });
 
-
-
 // routes ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 

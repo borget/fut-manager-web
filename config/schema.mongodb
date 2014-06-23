@@ -66,7 +66,12 @@ db.player.insert([
 }
 ]);
 
-
+db.users.update( {_id: ObjectId("53a79949c24085f61a1b6fe2") },
+                    { $set: {
+                              "local.userType": "admin",
+                            }
+                    }
+                  )
 
 var club = db.clubs.findOne({_id : ObjectId("53a31a0333c8adea5059865b")})
 db.player.find({club: club._id})
