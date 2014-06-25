@@ -5,34 +5,26 @@ window.MainContentView = Backbone.View.extend({
     },
 
     render: function () {
-        $(this.el).html(this.template());
+        $(this.el).html(this.template(this.model.toJSON()));
         return this;
     },
     
-	displayTable: function () {
+	displayTable: function (clubsList) {
 		 $(document).ready(function() {
-					
-					var datasource = [
-						{"clubID":1,"pos":1,"clubName":"Kellogs","jj":18,"jg":39,"je":1, "jp":2, "gf":30,"gc":30,"dif":30,"pts":30},
-						{"clubID":2,"pos":2,"clubName":"Argentina","jj":19,"jg":17,"je":3, "jp":2, "gf":30,"gc":30,"dif":30,"pts":30},
-						{"clubID":3,"pos":3,"clubName":"Borussia","jj":10,"jg":13,"je":2, "jp":2, "gf":30,"gc":30,"dif":30,"pts":30},
-						{"clubID":4,"pos":4,"clubName":"RealBañil","jj":22,"jg":53,"je":5, "jp":2, "gf":30,"gc":30,"dif":30,"pts":30},
-						{"clubID":5,"pos":5,"clubName":"AS Roma","jj":18,"jg":39,"je":1, "jp":2, "gf":30,"gc":30,"dif":30,"pts":30},
-						{"clubID":6,"pos":6,"clubName":"Leon","jj":19,"jg":17,"je":3, "jp":2, "gf":30,"gc":30,"dif":30,"pts":30},
-						{"clubID":7,"pos":7,"clubName":"Alemania","jj":10,"jg":13,"je":2, "jp":2, "gf":30,"gc":30,"dif":30,"pts":30},
-						{"clubID":8,"pos":8,"clubName":"Galacticos","jj":22,"jg":53,"je":5, "jp":2, "gf":30,"gc":30,"dif":30,"pts":30},
-						{"clubID":9,"pos":9,"clubName":"Monterrey","jj":18,"jg":39,"je":1, "jp":2, "gf":30,"gc":30,"dif":30,"pts":30},
-						{"clubID":10,"pos":10,"clubName":"Manchester United","jj":19,"jg":17,"je":3, "jp":2, "gf":30,"gc":30,"dif":30,"pts":30},
-						{"clubID":11,"pos":11,"clubName":"Dep El Rocio","jj":10,"jg":13,"je":2, "jp":2, "gf":30,"gc":30,"dif":30,"pts":30},
-						{"clubID":12,"pos":12,"clubName":"Supercampeones","jj":22,"jg":53,"je":5, "jp":2, "gf":30,"gc":30,"dif":30,"pts":30}
-					];
+		 			var clubItems = new Array();
+		 			if (clubsList.models !== undefined && clubsList.models.length > 0){
+		 				for (var i=0; i < clubsList.models.length; i++) {
+							clubItems.push(clubsList.models[i].attributes);
+						}
+		 			}
+		 	
                     $("#kendo-grid").kendoGrid({
                         dataSource: {
-                            data: datasource,
+                            data: clubItems,
                             schema: {
                                 model: {
                                     fields: {
-										pos: { type: "number" },
+                                    	pos: {type: "number"},
                                         clubName: { type: "string" },
                                         jj: { type: "number" },
                                         jg: { type: "number" },
@@ -41,7 +33,10 @@ window.MainContentView = Backbone.View.extend({
                                         gf: { type: "number" },
                                         gc: { type: "number" },
                                         dif: { type: "number" },
-                                        pts: { type: "number" }
+                                        pe: { type: "number" },
+                                        pts: { type: "number" },
+                                        contactMobile: { type: "string" },
+                                        contactEmail: { type: "string" },
                                     }
                                 }
                             },
@@ -57,7 +52,7 @@ window.MainContentView = Backbone.View.extend({
                             numeric: false
                         },
                         columns: [
-							{ field: "pos", title: "Pos."},
+							{ field: "pos", title: "Pos.", width:"23px"},
                             { field: "clubName", title: "Club"},
                             { field: "jj", title: "JJ"},
                             { field: "jg", title: "G" },

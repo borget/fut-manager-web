@@ -17,7 +17,7 @@ db.open(function(err, db) {
   assert.equal(null, err);
 
     // Authenticate
-    db.authenticate('admin', 'M0ng0labpa$5', function(err, result) {
+    db.authenticate('admin', 'Adm1nPa$5', function(err, result) {
       assert.equal(true, result);
     });
 

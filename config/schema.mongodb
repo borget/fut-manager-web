@@ -1,20 +1,36 @@
 db.clubs.insert([
-{
-	//ObjectId("53a31a0333c8adea5059865b")
-	'clubName':'Real Bañil',
-	'jj':10,
-	'jg':7,
-	'je':1,
-	'jp':2,
-	'gf':30,
-	'gc':10,
-	'dif':20,
-	'pe':1,
-	'pts':23,
-	'contactMobile':'442 425 50 48',
-	'contactEmail':'alberto.vazq.rmz@realb.com',
-	'isActive':true
-}
+{'clubName':'Real Samesta',	'jj':11,	'jg':9,	'je':0,	'jp':2,	'gf':75,	'gc':38,	'dif':37,	'pe':0,	'pts':27,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Alfa y Omega',	'jj':11,	'jg':7,	'je':3,	'jp':1,	'gf':76,	'gc':40,	'dif':36,	'pe':3,	'pts':27,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'AS Roma',   	'jj':11,	'jg':9,	'je':0,	'jp':2,	'gf':66,	'gc':42,	'dif':24,	'pe':0,	'pts':27,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Los Auténticos',	'jj':10,	'jg':8,	'je':1,	'jp':1,	'gf':57,	'gc':36,	'dif':21,	'pe':1,	'pts':26,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Argentina',	'jj':12,	'jg':8,	'je':1,	'jp':3,	'gf':66,	'gc':48,	'dif':18,	'pe':1,	'pts':26,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Asturias',	'jj':12,	'jg':7,	'je':4,	'jp':1,	'gf':60,	'gc':50,	'dif':10,	'pe':1,	'pts':26,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Gallos Blancos',	'jj':11,	'jg':6,	'je':3,	'jp':2,	'gf':55,	'gc':39,	'dif':16,	'pe':2,	'pts':23,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Panzas Verdes',	'jj':10,	'jg':7,	'je':1,	'jp':2,	'gf':59,	'gc':37,	'dif':22,	'pe':0,	'pts':22,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Taxi Diamante',	'jj':11,	'jg':7,	'je':1,	'jp':3,	'gf':63,	'gc':42,	'dif':21,	'pe':0,	'pts':22,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Black Tide',	'jj':11,	'jg':6,	'je':2,	'jp':3,	'gf':53,	'gc':42,	'dif':11,	'pe':1,	'pts':21,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+
+{'clubName':'Borussia',	'jj':12,	'jg':6,	'je':2,	'jp':4,	'gf':68,	'gc':67,	'dif':1,	'pe':0,	'pts':20,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Alemania',	'jj':12,	'jg':6,	'je':2,	'jp':4,	'gf':49,	'gc':55,	'dif':-6,	'pe':0,	'pts':20,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Irresistibles',	'jj':11,	'jg':4,	'je':3,	'jp':4,	'gf':38,	'gc':38,	'dif':0,	'pe':3,	'pts':18,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Wayusei',	'jj':10,	'jg':5,	'je':1,	'jp':4,	'gf':51,	'gc':41,	'dif':10,	'pe':1,	'pts':17,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Galácticos',	'jj':10,	'jg':4,	'je':2,	'jp':4,	'gf':42,	'gc':58,	'dif':-16,	'pe':1,	'pts':15,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Super Campeones',	'jj':10,	'jg':4,	'je':1,	'jp':5,	'gf':46,	'gc':34,	'dif':12,	'pe':0,	'pts':13,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Atlético de Madrid',	'jj':11,	'jg':3,	'je':2,	'jp':6,	'gf':54,	'gc':52,	'dif':2,	'pe':1,	'pts':12,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'FC Arboledas',	'jj':10,	'jg':2,	'je':4,	'jp':4,	'gf':32,	'gc':36,	'dif':-4,	'pe':2,	'pts':12,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Chelsea',	'jj':10,	'jg':3,	'je':2,	'jp':5,	'gf':54,	'gc':59,	'dif':-5,	'pe':1,	'pts':12,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'León',	'jj':10,	'jg':1,	'je':6,	'jp':3,	'gf':44,	'gc':51,	'dif':-7,	'pe':3,	'pts':12,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+
+{'clubName':'Indecisos',	'jj':11,	'jg':4,	'je':0,	'jp':7,	'gf':46,	'gc':57,	'dif':-11,	'pe':0,	'pts':12,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Dep el Rocío',	'jj':11,	'jg':2,	'je':3,	'jp':6,	'gf':39,	'gc':57,	'dif':-18,	'pe':3,	'pts':12,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Real Bañil',	'jj':12,	'jg':2,	'je':2,	'jp':8,	'gf':53,	'gc':72,	'dif':-19,	'pe':2,	'pts':10,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Autocom',	'jj':10,	'jg':1,	'je':5,	'jp':4,	'gf':22,	'gc':34,	'dif':-12,	'pe':1,	'pts':9,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Mantescher United',	'jj':10,	'jg':1,	'je':5,	'jp':4,	'gf':35,	'gc':57,	'dif':-22,	'pe':0,	'pts':8,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Monterrey',	'jj':11,	'jg':2,	'je':1,	'jp':8,	'gf':36,	'gc':60,	'dif':-24,	'pe':1,	'pts':8,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Los que siguen',	'jj':11,	'jg':1,	'je':3,	'jp':7,	'gf':27,	'gc':60,	'dif':-33,	'pe':1,	'pts':7,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'América',	'jj':10,	'jg':1,	'je':2,	'jp':7,	'gf':30,	'gc':48,	'dif':-18,	'pe':1,	'pts':6,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Engineer Club',	'jj':10,	'jg':1,	'je':2,	'jp':7,	'gf':48,	'gc':71,	'dif':-23,	'pe':1,	'pts':6,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
+{'clubName':'Inter',	'jj':10,	'jg':1,	'je':2,	'jp':7,	'gf':49,	'gc':72,	'dif':-23,	'pe':1,	'pts':6,	'contactMobile':'442 425 50 48',	'contactEmail':'alberto.vazq.rmz@realb.com',	'isActive':true},
 ])
 
 db.player.insert([
@@ -75,3 +91,6 @@ db.users.update( {_id: ObjectId("53a79949c24085f61a1b6fe2") },
 
 var club = db.clubs.findOne({_id : ObjectId("53a31a0333c8adea5059865b")})
 db.player.find({club: club._id})
+
+
+./mongoexport -h ds049219.mongolab.com:49219 -d fut-manager -c clubs -u admin -p 'Adm1nPa$5' -o /home/alberto/database/mongodb-linux-x86_64-2.6.1/dump/clubs.csv --csv -f clubName,jj,jg,je,jp,gf,gc,dif,pe,pts,contactMobile,contactEmail,isActive
