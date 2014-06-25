@@ -12,7 +12,7 @@ var AppRouter = Backbone.Router.extend({
 	index: function(page) {
 		var clubsList = new ClubsCollection(); 
         clubsList.fetch({success: function(){
-        	var mainContentView = new MainContentView({model: clubsList});
+        	var mainContentView = new MainContentView();
             $(".content").html(mainContentView.el);
         	mainContentView.displayTable(clubsList);    
         }});   	
