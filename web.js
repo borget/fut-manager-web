@@ -25,7 +25,7 @@ app.configure(function () {
 	app.use(express.cookieParser()); // read cookies (needed for auth)
     app.use(allowCrossDomain);
 	app.use(express.bodyParser()); // get information from html forms
-	app.set('views',__dirname + '/public/views');
+	app.set('views',__dirname + '/public/ejs/views');  // ejs public folder
 	app.set('view engine', 'ejs'); // set up ejs for templating
 	app.use(express.static(path.join(__dirname, 'public')));
 	// required for passport

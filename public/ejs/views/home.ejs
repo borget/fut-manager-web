@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Fut7 Manager</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <link rel="shortcut icon" href="assets/ico/futicon.ico">
+        <!-- bootstrap 3.0.2 -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- font Awesome -->
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <!-- Ionicons -->
+        <link href="assets/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <!-- Theme style -->
+        <link href="assets/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+        
+    <style>html { font-size: 12px; font-family: Arial, Helvetica, sans-serif; }</style>
+    
+    <link rel="stylesheet" href="assets/css/kendo/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="assets/css/kendo/styles/kendo.flat.min.css">
+    <link rel="stylesheet" href="assets/css/kendo/styles/kendo.dataviz.flat.min.css">
+	<link rel="stylesheet" href="assets/css/kendo/styles/kendo.rtl.min.css">
+	<link rel="stylesheet" href="assets/css/kendo/styles/kendo.mobile.all.min.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="skin-black">
+        <!-- header logo: style can be found in header.less -->
+        <header class="header">
+            
+        </header>
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    
+                    <!-- Sidebar user panel -->
+                    <!-- search form -->
+  
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="active">
+                            <a href="/home">
+                                <i class="fa fa-dashboard"></i> <span>Lo más reciente</span>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-table"></i> <span>Calendario de Juegos</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href=""><i class="fa fa-angle-double-right"></i> Próxima Jornada</a></li>
+                                <li><a href=""><i class="fa fa-angle-double-right"></i> Anteriores</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Estadísticas al momento
+                        <small>Panel de control</small>
+                    </h1>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="http://cdn.kendostatic.com/2014.1.318/js/kendo.all.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+        <script src="js/AdminLTE/app.js" type="text/javascript"></script>
+        
+		<script src="js/underscore-min.js"></script>
+		<script src="js/backbone-min.js"></script>
+		<script src="backbone/utils.js"></script>
+		<script src="backbone/views/headerView.js"></script>
+		<script src="backbone/views/mainContentView.js"></script>
+		<script src="backbone/models/clubsModelRestJsonp.js"></script>
+		<script src="backbone/userRouter.js"></script>
+		
+    </body>
+</html>
