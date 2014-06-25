@@ -1,10 +1,8 @@
 window.Clubs = Backbone.Model.extend({
 
-    urlRoot:"http://localhost:5000/clubs",
+    urlRoot:"http://fut-manager.herokuapp.com/clubs",
 	defaults: {
-        //promoName: "",
-	//promoStatus: "0",
-    //    promoImg: null
+
     },
     
     initialize: function () {
@@ -19,7 +17,7 @@ window.ClubsCollection = Backbone.Collection.extend({
 
     model: Clubs,
 
-    url:"http://localhost:5000/clubs"
+    url:"http://fut-manager.herokuapp.com/clubs"
 
 });
 
