@@ -17,7 +17,7 @@ window.Clubs = Backbone.Model.extend({
 window.ClubsCollection = Backbone.Collection.extend({
 
     model: Clubs,
-	urlRoot:"http://fut-manager.herokuapp.com/clubs",
+	url:"http://fut-manager.herokuapp.com/clubs",
     //url:"http://localhost:5000/clubs"
 
 });
