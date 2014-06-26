@@ -12,10 +12,13 @@ var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
-}
+};
 
 // configuration ===============================================================
-mongoose.connect(configDB.url); // connect to our database
+mongoose.connect(configDB.url); // db connection used by passport middleware
+
+var mongoDBHelper = require('./app/models/mongoDBHandler'); // db connection for RESTful services
+mongoDBHelper.open();
 
 require('./config/passport')(passport); // pass passport for configuration
 
