@@ -31,7 +31,7 @@ window.NewClubView = Backbone.View.extend({
 							  transport: {
 							    read: function(options) {
 							      $.ajax({
-							        url: "http://localhost:5000/clubs",
+							        url: "http://fut-manager.herokuapp.com/clubs",
 							        dataType: "jsonp",
 							        success: function(result) {
 							          options.success(result);
@@ -40,7 +40,7 @@ window.NewClubView = Backbone.View.extend({
 							    },
 							    create: function(options) {
 							      $.ajax({
-							        url: "http://localhost:5000/clubs",
+							        url: "http://fut-manager.herokuapp.com/clubs",
 							        type: "POST",
 							        dataType: "jsonp", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
 							        // send the created data items as the "models" service parameter encoded in JSON
@@ -121,7 +121,7 @@ window.NewClubView = Backbone.View.extend({
                         remove: function (e){
                         	deleteID = e.model.toJSON()._id; 
                         	$.ajax({
-							        url: "http://localhost:5000/clubs",
+							        url: "http://fut-manager.herokuapp.com/clubs",
 							        type: "DELETE",
 							        dataType: "jsonp",
 							        data: {id:deleteID},
