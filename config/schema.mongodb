@@ -94,3 +94,10 @@ db.player.find({club: club._id})
 
 
 ./mongoexport -h ds049219.mongolab.com:49219 -d fut-manager -c clubs -u admin -p 'Adm1nPa$5' -o /home/alberto/database/mongodb-linux-x86_64-2.6.1/dump/clubs.csv --csv -f clubName,jj,jg,je,jp,gf,gc,dif,pe,pts,contactMobile,contactEmail,isActive
+
+
+db.tournament.insert([
+{
+	'tournamentName':'El Sol II 2014',
+	clubs:[]  
+}])

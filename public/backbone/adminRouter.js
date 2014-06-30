@@ -20,9 +20,9 @@ var AppRouter = Backbone.Router.extend({
    },
    
    club: function (){
-
         this.newClubView = new NewClubView();
         $('.content').html(this.newClubView.el);
+        this.newClubView.displayTable();
    }
 });
 

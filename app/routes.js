@@ -84,6 +84,8 @@ module.exports = function(app, passport) {
 	app.get('/players/:id', isLoggedIn, players.findPlayers);
 	
 	app.get('/clubs', isLoggedIn, clubs.findAllClubs);
+	app.post('/clubs', isLoggedInAsAdmin, clubs.insertClub);
+	app.delete('/clubs', isLoggedInAsAdmin, clubs.deleteClub);
 };
 
 // route middleware to make sure a user is logged in

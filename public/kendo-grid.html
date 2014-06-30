@@ -1,16 +1,22 @@
-window.NewClubView = Backbone.View.extend({
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="http://demos.telerik.com/kendo-ui/grid/editing">
+    <style>html { font-size: 12px; font-family: Arial, Helvetica, sans-serif; }</style>
+    <title></title>
+    <link href="http://cdn.kendostatic.com/2014.1.528/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="http://cdn.kendostatic.com/2014.1.528/styles/kendo.flat.min.css" rel="stylesheet" />
+    <link href="http://cdn.kendostatic.com/2014.1.528/styles/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="http://cdn.kendostatic.com/2014.1.528/styles/kendo.dataviz.flat.min.css" rel="stylesheet" />
+    <script src="http://cdn.kendostatic.com/2014.1.528/js/jquery.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2014.1.528/js/kendo.all.min.js"></script>
+</head>
+<body>
+            <div id="example">
+            <div id="grid"></div>
 
-    initialize: function () {
-        this.render();
-    },
-
-    render: function () {
-        $(this.el).html(this.template());
-        return this;
-    },
-    
-    displayTable: function () {
-		 function getNew(dataSource){
+            <script>
+            function getNew(dataSource){
             	var model = {};
             	$.each( dataSource.data(), function( i, dataItem ) {
             		if (dataItem.dirty){
@@ -18,16 +24,12 @@ window.NewClubView = Backbone.View.extend({
             			return false;	
             		}
 				}); 
-				if ($.isEmptyObject(model)){
-					alert("No se registran cambios");
-					throw new Error("Cannot save empty model");
-				}
-				
             	return model;
             }
                 $(document).ready(function () {
                 	var deleteId;
-                    var dataSource = new kendo.data.DataSource({
+                    var crudServiceBaseUrl = "http://localhost:5000",
+							dataSource = new kendo.data.DataSource({
 							  transport: {
 							    read: function(options) {
 							      $.ajax({
@@ -41,7 +43,7 @@ window.NewClubView = Backbone.View.extend({
 							    create: function(options) {
 							      $.ajax({
 							        url: "http://localhost:5000/clubs",
-							        type: "POST",
+							        method: "POST",
 							        dataType: "jsonp", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
 							        // send the created data items as the "models" service parameter encoded in JSON
 							        data: getNew(dataSource),
@@ -56,13 +58,12 @@ window.NewClubView = Backbone.View.extend({
 							          dataSource.read();
 							        }
 							      });
-							    },
+							    }
 							  },
                             batch: true,
-                            pageSize: 8,
+                            pageSize: 20,
                             schema: {
                                 model: {
-                                    //id: "_id",
                                     fields: {
                                        clubName: { validation: { required: true } },
                                        jj:{type:"number"},
@@ -82,47 +83,35 @@ window.NewClubView = Backbone.View.extend({
                             }
                         });
 
-                    $("#kendo-clubs-grid").kendoGrid({
+                    $("#grid").kendoGrid({
                         dataSource: dataSource,
                         navigatable: true,
                         pageable: true,
-                        height: 400,
-                        resizable: true,
-                        scrollable: false,
-                        toolbar: [
-						    //name - name of the available commands, text - text to be set on the button
-						    { name: "create", text: "Nuevo" },
-						    { name: "save", text: "Guardar" },
-						    { name: "cancel", text: "Cancelar" }
-						],
-	                        columns: [
-                        	{ field: "clubName", title: "Club"},
-                        	{ field: "jj", title: "JJ"},
-                        	{ field: "jg", title: "JG"},
-                        	{ field: "je", title: "JE"},
-                        	{ field: "jp", title: "JP"},
-                        	{ field: "gf", title: "GF"},
-                        	{ field: "gc", title: "GC"},
-                        	{ field: "dif", title: "DIF"},
-                        	{ field: "pe", title: "PE"},
-                        	{ field: "pts", title: "PTS"},
-                        	{ field: "contactMobile", title: "Cel"},
-                        	{ field: "contactEmail", title: "Email"},
-                        	{ field: "isActive", title: "Activo?"},
-                        	{ command: [
-						            { name: "destroy", text: "Borrar"}
-						        ],
-						        title: "&nbsp;"
-						    }
+                        height: 550,
+                        toolbar: ["create", "save", "cancel"],
+                        columns: [
+                        	{ field: "clubName", title: "Club" },
+                        	{ field: "jj"},
+                        	{ field: "jg"},
+                        	{ field: "je"},
+                        	{ field: "jp"},
+                        	{ field: "gf"},
+                        	{ field: "gc"},
+                        	{ field: "dif"},
+                        	{ field: "pe"},
+                        	{ field: "pts"},
+                        	{ field: "contactMobile"},
+                        	{ field: "contactEmail"},
+                        	{ field: "isActive"},
+                        	{ command: "destroy", title: "&nbsp;", width: 120 }
                             ],
-                        editable: {
-					    	confirmation: "Deseas chutarte esto?"
-                        },
+                        editable: true,
                         remove: function (e){
-                        	deleteID = e.model.toJSON()._id; 
+                        	deleteID = e.model.toJSON()._id;
+                        	console.log(deleteID);    
                         	$.ajax({
 							        url: "http://localhost:5000/clubs",
-							        type: "DELETE",
+							        method: "DELETE",
 							        dataType: "jsonp",
 							        data: {id:deleteID},
 							        success: function(result) {
@@ -135,5 +124,7 @@ window.NewClubView = Backbone.View.extend({
                         }
                     });
                 });
-	}
-});
+            </script>
+        </div>
+</body>
+</html>

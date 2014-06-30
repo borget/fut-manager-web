@@ -1040,6 +1040,7 @@ body > .header .logo .icon {
 .input-group .input-group-addon {
   border-radius: 0;
   background-color: #f4f4f4;
+  width: 39px;
 }
 /* button groups */
 .btn-group-vertical .btn.btn-flat:first-of-type,
