@@ -10,28 +10,14 @@ window.NewClubView = Backbone.View.extend({
     },
     
     displayTable: function () {
-		 function getNew(dataSource){
-            	var model = {};
-            	$.each( dataSource.data(), function( i, dataItem ) {
-            		if (dataItem.dirty){
-            			model = dataItem.toJSON();
-            			return false;	
-            		}
-				}); 
-				if ($.isEmptyObject(model)){
-					alert("No se registran cambios");
-					throw new Error("Cannot save empty model");
-				}
-				
-            	return model;
-            }
                 $(document).ready(function () {
                 	var deleteId;
+                	
                     var dataSource = new kendo.data.DataSource({
 							  transport: {
 							    read: function(options) {
 							      $.ajax({
-							        url: "http://fut-manager.herokuapp.com/clubs",
+							        url: window.fut7.constants.url,
 							        dataType: "jsonp",
 							        success: function(result) {
 							          options.success(result);
@@ -40,11 +26,11 @@ window.NewClubView = Backbone.View.extend({
 							    },
 							    create: function(options) {
 							      $.ajax({
-							        url: "http://fut-manager.herokuapp.com/clubs",
+							        url: window.fut7.constants.url,
 							        type: "POST",
 							        dataType: "jsonp", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
 							        // send the created data items as the "models" service parameter encoded in JSON
-							        data: getNew(dataSource),
+							        data: {data:kendoDatasourceHelper.getInstance().getNewItems(dataSource)},
 							        success: function(result) {
 							          // notify the data source that the request succeeded
 							          options.success(result);
@@ -116,12 +102,15 @@ window.NewClubView = Backbone.View.extend({
 						    }
                             ],
                         editable: {
-					    	confirmation: "Deseas chutarte esto?"
-                        },
+					    	confirmation: function(e) {
+					    		console.log(e);
+					        	return  "En verdad te quieres chutar "+ e.clubName +"?";
+					     	}
+					   	},
                         remove: function (e){
                         	deleteID = e.model.toJSON()._id; 
                         	$.ajax({
-							        url: "http://fut-manager.herokuapp.com/clubs",
+							        url: window.fut7.constants.url,
 							        type: "DELETE",
 							        dataType: "jsonp",
 							        data: {id:deleteID},

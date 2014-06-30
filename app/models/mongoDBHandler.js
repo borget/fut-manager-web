@@ -1,4 +1,4 @@
-var mongoDBHelper = (function () {
+var mongoDBHandler = (function () {
   var instance;
 
   function init() {
@@ -51,9 +51,9 @@ var mongoDBHelper = (function () {
 })();
 
 exports.getDB = function() {
-	return mongoDBHelper.getInstance().getDB();   
+	return mongoDBHandler.getInstance().getDB();   
 };
 
 exports.open = function() {
-	return mongoDBHelper.getInstance().open();   
+	return mongoDBHandler.getInstance().open();   
 };

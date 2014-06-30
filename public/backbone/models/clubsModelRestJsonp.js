@@ -1,7 +1,5 @@
 window.Clubs = Backbone.Model.extend({
-
-    //urlRoot:"http://fut-manager.herokuapp.com/clubs",
-    urlRoot:"http://fut-manager.herokuapp.com/clubs",
+    urlRoot: window.fut7.constants.url,
 	defaults: {
 
     },
@@ -11,15 +9,11 @@ window.Clubs = Backbone.Model.extend({
 		
         this.validators = {};
     }
-
 });
 
 window.ClubsCollection = Backbone.Collection.extend({
-
     model: Clubs,
-	//url:"http://fut-manager.herokuapp.com/clubs",
-    url:"http://fut-manager.herokuapp.com/clubs"
-
+    url: window.fut7.constants.url
 });
 
 var originalSync = Backbone.sync;

@@ -17,8 +17,8 @@ var allowCrossDomain = function(req, res, next) {
 // configuration ===============================================================
 mongoose.connect(configDB.url); // db connection used by passport middleware
 
-var mongoDBHelper = require('./app/models/mongoDBHandler'); // db connection for RESTful services
-mongoDBHelper.open();
+var mongoDBHandler = require('./app/models/mongoDBHandler'); // db connection for RESTful services
+mongoDBHandler.open();
 
 require('./config/passport')(passport); // pass passport for configuration
 

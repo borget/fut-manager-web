@@ -33,7 +33,7 @@
 							  transport: {
 							    read: function(options) {
 							      $.ajax({
-							        url: "http://fut-manager.herokuapp.com/clubs",
+							        url: "http://localhost:5000/clubs",
 							        dataType: "jsonp",
 							        success: function(result) {
 							          options.success(result);
@@ -42,7 +42,7 @@
 							    },
 							    create: function(options) {
 							      $.ajax({
-							        url: "http://fut-manager.herokuapp.com/clubs",
+							        url: "http://localhost:5000/clubs",
 							        method: "POST",
 							        dataType: "jsonp", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
 							        // send the created data items as the "models" service parameter encoded in JSON
@@ -110,7 +110,7 @@
                         	deleteID = e.model.toJSON()._id;
                         	console.log(deleteID);    
                         	$.ajax({
-							        url: "http://fut-manager.herokuapp.com/clubs",
+							        url: "http://localhost:5000/clubs",
 							        method: "DELETE",
 							        dataType: "jsonp",
 							        data: {id:deleteID},
