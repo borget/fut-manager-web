@@ -10,9 +10,8 @@ window.NewClubView = Backbone.View.extend({
     },
     
     displayTable: function () {
-                $(document).ready(function () {
+		$(document).ready(function () {
                 	var deleteId;
-                	
                     var dataSource = new kendo.data.DataSource({
 							  transport: {
 							    read: function(options) {
@@ -42,7 +41,7 @@ window.NewClubView = Backbone.View.extend({
 							          dataSource.read();
 							        }
 							      });
-							    },
+							    }
 							  },
                             batch: true,
                             pageSize: 8,
@@ -61,7 +60,7 @@ window.NewClubView = Backbone.View.extend({
                                        pe:{type:"number"},
                                        pts:{type:"number"},
                                        contactMobile:{type:"string", defaultValue: "(442)"},
-                                       contactEmail:{type:"tring", defaultValue: "@.com"},
+                                       contactEmail:{type:"tring", defaultValue: "@.com", width:50},
                                        isActive:{type:"boolean", defaultValue: true}
                                     }
                                 }
@@ -71,9 +70,13 @@ window.NewClubView = Backbone.View.extend({
                     $("#kendo-clubs-grid").kendoGrid({
                         dataSource: dataSource,
                         navigatable: true,
+                        sortable: {
+                        	mode: "single",
+                            allowUnsort: true
+                        },
                         pageable: true,
-                        height: 400,
-                        resizable: true,
+                        height: 480,
+                        resizable: false,
                         scrollable: false,
                         toolbar: [
 						    //name - name of the available commands, text - text to be set on the button
@@ -103,7 +106,6 @@ window.NewClubView = Backbone.View.extend({
                             ],
                         editable: {
 					    	confirmation: function(e) {
-					    		console.log(e);
 					        	return  "En verdad te quieres chutar "+ e.clubName +"?";
 					     	}
 					   	},
