@@ -1,5 +1,5 @@
 window.Clubs = Backbone.Model.extend({
-    urlRoot: window.fut7.constants.url,
+    urlRoot: window.fut7.constants.url+'clubs',
 	defaults: {
 
     },
@@ -13,7 +13,7 @@ window.Clubs = Backbone.Model.extend({
 
 window.ClubsCollection = Backbone.Collection.extend({
     model: Clubs,
-    url: window.fut7.constants.url
+    url: window.fut7.constants.url+'clubs'
 });
 
 var originalSync = Backbone.sync;

@@ -1,3 +1,3 @@
 module.exports = {
-	'url' : 'mongodb://admin:Adm1nPa$5@ds049219.mongolab.com:49219/fut-manager'
+	'url' : 'mongodb://fut-manager:Fut-m4nag3r@ds027489.mongolab.com:27489/heroku_app26779779'
 };

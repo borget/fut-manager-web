@@ -12,7 +12,7 @@ var mongoDBHandler = (function () {
     BSON = require('mongodb').pure().BSON,
     assert = require('assert');
 
-	var db = new Db('fut-manager', new Server("ds049219.mongolab.com", 49219, {auto_reconnect: true}), 
+	var db = new Db('heroku_app26779779', new Server("ds027489.mongolab.com", 27489, {auto_reconnect: true}), 
 					{w:0, native_parser: false});
  
     return {
@@ -26,7 +26,7 @@ var mongoDBHandler = (function () {
      		return db.open(function(err, db) {
   						assert.equal(null, err);
 					    // Authenticate
-					    db.authenticate('admin', 'Adm1nPa$5', function(err, result) {
+					    db.authenticate('fut-manager', 'Fut-m4nag3r', function(err, result) {
 					      assert.equal(true, result);
 					    });
 					});

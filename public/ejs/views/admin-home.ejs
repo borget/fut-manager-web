@@ -10,7 +10,7 @@
         <!-- font Awesome -->
         <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
-        <link href="assets/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <!--link href="assets/css/ionicons.min.css" rel="stylesheet" type="text/css" /-->
         <!-- Theme style -->
         <link href="assets/css/AdminLTE.css" rel="stylesheet" type="text/css" />
         
@@ -49,7 +49,7 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a href="/admin-home">
+                            <a href="/admin-home#">
                                 <i class="fa fa-trophy"></i> <span>Lo más reciente</span>
                             </a>
                         </li>
@@ -59,17 +59,17 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> Próxima Jornada</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> Anteriores</a></li>
+                                <li><a href="/admin-home#"><i class="fa fa-angle-double-right"></i> Próxima Jornada</a></li>
+                                <li><a href="/admin-home#"><i class="fa fa-angle-double-right"></i> Anteriores</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
-                            <a href="/admin-home">
+                            <a href="/admin-home#">
                                 <i class="fa fa-pencil-square-o"></i> <span>Administrar Clubs</span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="#/club"><i class="fa fa-angle-double-right"></i> Nuevo Club</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i> Actualizar Club</a></li>
+                                <li><a href="#/club"><i class="fa fa-angle-double-right"></i> Club</a></li>
+                                <li><a href="#/players"><i class="fa fa-angle-double-right"></i> Jugadores</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -108,6 +108,7 @@
 		<script src="backbone/views/headerView.js"></script>
 		<script src="backbone/views/mainContentView.js"></script>
 		<script src="backbone/views/newClubView.js"></script>
+		<script src="backbone/views/playersView.js"></script>
 		<script src="backbone/models/clubsModelRestJsonp.js"></script>
 		<script src="backbone/adminRouter.js"></script>
 		

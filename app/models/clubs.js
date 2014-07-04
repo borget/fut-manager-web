@@ -1,5 +1,5 @@
-var mongoDBHelper = require('./mongoDBHandler'),
-               db = mongoDBHelper.getDB(),
+var mongoDBHandler = require('./mongoDBHandler'),
+               db = mongoDBHandler.getDB(),
          ObjectID = require('mongodb').ObjectID;
 
 exports.findAllClubs = function(req, res) {

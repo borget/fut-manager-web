@@ -2,7 +2,8 @@ var AppRouter = Backbone.Router.extend({
 
     routes: {
         ""	      : "index",
-        "club"	  : "club"
+        "club"	  : "club",
+        "players" : "players"
     },
 
     initialize: function () {
@@ -22,11 +23,17 @@ var AppRouter = Backbone.Router.extend({
    club: function (){
         this.newClubView = new NewClubView();
         $('.content').html(this.newClubView.el);
-        this.newClubView.displayTable();
+        this.newClubView.displayClubsGrid();
+   },
+   
+   players: function () {
+   		this.playersView = new PlayersView();
+        $('.content').html(this.playersView.el);
+        this.playersView.displayClubsList();
    }
 });
 
-utils.loadTemplate(['HeaderView', 'MainContentView', 'NewClubView'], function() {
+utils.loadTemplate(['HeaderView', 'MainContentView', 'NewClubView', 'PlayersView'], function() {
     app = new AppRouter();
     Backbone.history.start();
 });

@@ -1,0 +1,85 @@
+<!-- Main content -->
+<style scoped>
+	.clubs-section {
+		padding: 15px;
+	}
+	.clubs-section h2 {
+		font-size: 1.2em;
+		margin-bottom: 10px;
+	}
+	.club {
+		float: left;
+		width: 200px;
+		height: 110px;
+		margin: 0;
+		padding: 5px;
+		cursor: pointer;
+	}
+	.club img {
+		float: left;
+		width: 95px;
+		height: 95px;
+	}
+	.club h3 {
+		margin: 0;
+		padding: 10px 0 0 10px;
+		font-size: .9em;
+		overflow: hidden;
+		font-weight: normal;
+		float: none;
+		max-width: 100px;
+	}
+	.k-pager-wrap {
+		border-top: 0;
+	}
+	.k-listview:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	.k-listview {
+		padding: 0;
+	}
+</style>
+<script type="text/x-kendo-tmpl" id="club-template">
+	<div class="club">
+	<img src="#:clubBadge#" alt="#:clubName#" />
+	<h3>#:clubName#</h3>
+	</div>
+</script>
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box box-success">
+				<div class="box-header">
+					<h3 class="box-title">Selecciona un Club</h3>
+
+				</div><!-- /.box-header -->
+				<div class="box-body table-responsive no-padding">
+					<!-- Date dd/mm/yyyy -->
+					<div class="form-group">
+						<div class="clubs-section k-header">
+							<h2>Clubs</h2>
+							<div id="kendo-clubs-list"></div>
+							<div id="pager" class="k-pager-wrap"></div>
+						</div>
+					</div><!-- /.form group -->
+				</div><!-- /.box-body -->
+			</div><!-- /.box -->
+		</div>
+		<div class="col-xs-12">
+			<!-- Players -->
+			<div class="box box-success">
+				<div class="box-header">
+					<h3 class="box-title">Jugadores</h3>
+				</div>
+				<div class="box-body table-responsive no-padding">
+					<div class="form-group">
+						<div id="kendo-players-grid"></div>
+					</div>
+				</div>
+			</div>
+		</div><!-- /.row -->
+</section><!-- /.content -->

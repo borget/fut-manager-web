@@ -5,7 +5,7 @@ var ObjectID = require('mongodb').ObjectID,
 exports.findPlayers = function(req, res) {
     var objectId = new ObjectID.createFromHexString(req.params.id);
     
-    db.collection('player', function(err, collection) {
+    db.collection('players', function(err, collection) {
         collection.find({'club': objectId}).toArray(function(err, items) {
             res.jsonp(items);
         });

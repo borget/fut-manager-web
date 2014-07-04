@@ -11,6 +11,7 @@ var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Cache-Control', 'public, max-age=31536000000');
     next();
 };
 
@@ -21,6 +22,10 @@ var mongoDBHandler = require('./app/models/mongoDBHandler'); // db connection fo
 mongoDBHandler.open();
 
 require('./config/passport')(passport); // pass passport for configuration
+
+// Cloudinary ============
+var cloudinary = require('cloudinary'),
+	        fs = require('fs');
 
 app.configure(function () {
     // set up our express application
@@ -36,8 +41,8 @@ app.configure(function () {
 	app.use(passport.initialize());
 	app.use(passport.session()); // persistent login sessions
 	app.use(flash()); // use connect-flash for flash messages stored in session
-    
     app.use(express.errorHandler());
+    cloudinary.config({ cloud_name: 'hpydjd1cu', api_key: '382965998156596', api_secret: 'YRb5g5eK4aDlABo_oMOuaMSH2Zw' });
 });
 
 // routes ======================================================================

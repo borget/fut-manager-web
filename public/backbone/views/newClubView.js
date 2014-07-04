@@ -9,14 +9,14 @@ window.NewClubView = Backbone.View.extend({
         return this;
     },
     
-    displayTable: function () {
+    displayClubsGrid: function () {
 		$(document).ready(function () {
                 	var deleteId;
                     var dataSource = new kendo.data.DataSource({
 							  transport: {
 							    read: function(options) {
 							      $.ajax({
-							        url: window.fut7.constants.url,
+							        url: window.fut7.constants.url+'clubs',
 							        dataType: "jsonp",
 							        success: function(result) {
 							          options.success(result);
@@ -25,7 +25,7 @@ window.NewClubView = Backbone.View.extend({
 							    },
 							    create: function(options) {
 							      $.ajax({
-							        url: window.fut7.constants.url,
+							        url: window.fut7.constants.url+'clubs',
 							        type: "POST",
 							        dataType: "jsonp", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
 							        // send the created data items as the "models" service parameter encoded in JSON
@@ -59,8 +59,32 @@ window.NewClubView = Backbone.View.extend({
                                        dif:{type:"number"},
                                        pe:{type:"number"},
                                        pts:{type:"number"},
-                                       contactMobile:{type:"string", defaultValue: "(442)"},
-                                       contactEmail:{type:"tring", defaultValue: "@.com", width:50},
+                                       contactMobile:{type:"string", defaultValue: "(000)-000-0000",
+                                       				validation: {
+		                                                required: false,
+		                                                contactMobileValidation: function (input) {
+		                                                    if (input.is("[name='contactMobile']") && input.val() != "") {
+		                                                        input.attr("data-contactMobileValidation-msg", "Número no válido.");
+		                                                        return window.fut7.constants.telRegex.test(input.val());
+		                                                    }
+		
+		                                                    return true;
+		                                                }
+		                                            }},
+                                       contactEmail:{type:"tring", defaultValue: "ejemplo@mail.com", width:50,
+                                       				validation: {
+		                                                required: false,
+		                                                contactEmailValidation: function (input) {
+		                                                    if (input.is("[name='contactEmail']") && input.val() != "") {
+		                                                        input.attr("data-contactEmailValidation-msg", "Email no válido.");
+		                                                        return window.fut7.constants.emailRegex.test(input.val());
+		                                                    }
+		
+		                                                    return true;
+		                                                }
+		                                            }
+                                       },
+                                       clubBadge:{type:"string", defaultValue: window.fut7.constants.clubBadgeDefault},
                                        isActive:{type:"boolean", defaultValue: true}
                                     }
                                 }
@@ -75,8 +99,7 @@ window.NewClubView = Backbone.View.extend({
                             allowUnsort: true
                         },
                         pageable: true,
-                        height: 480,
-                        resizable: false,
+                        resizable: true,
                         scrollable: false,
                         toolbar: [
 						    //name - name of the available commands, text - text to be set on the button
@@ -95,7 +118,7 @@ window.NewClubView = Backbone.View.extend({
                         	{ field: "dif", title: "DIF"},
                         	{ field: "pe", title: "PE"},
                         	{ field: "pts", title: "PTS"},
-                        	{ field: "contactMobile", title: "Cel"},
+                        	{ field: "contactMobile", title: "Tel"},
                         	{ field: "contactEmail", title: "Email"},
                         	{ field: "isActive", title: "Activo?"},
                         	{ command: [
@@ -112,7 +135,7 @@ window.NewClubView = Backbone.View.extend({
                         remove: function (e){
                         	deleteID = e.model.toJSON()._id; 
                         	$.ajax({
-							        url: window.fut7.constants.url,
+							        url: window.fut7.constants.url+'clubs',
 							        type: "DELETE",
 							        dataType: "jsonp",
 							        data: {id:deleteID},
