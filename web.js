@@ -7,7 +7,7 @@ var  express = require("express"),
 
 var configDB = require('./config/database.js');
 
-var allowCrossDomain = function(req, res, next) {
+var setHeders = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
@@ -31,7 +31,8 @@ app.configure(function () {
     // set up our express application
 	app.use(express.logger('dev')); // log every request to the console
 	app.use(express.cookieParser()); // read cookies (needed for auth)
-    app.use(allowCrossDomain);
+    app.use(setHeders);
+    app.use(express.compress());
 	app.use(express.bodyParser()); // get information from html forms
 	app.set('views',__dirname + '/public/ejs/views');  // ejs public folder
 	app.set('view engine', 'ejs'); // set up ejs for templating
