@@ -20,7 +20,7 @@ exports.saveOrUpdateClub = function(req, res) {
 	    		}
 			  	collection.save(newClubs[i], function(err, result) {
 	            	if (err) {
-	              		res.send({'error':'An error has occurred- ' + err});
+	              		res.send({'error':'An error has occurred- saving club' + err});
 	           		} else {
 	           			if(result!=undefined){
 	               			res.send(JSON.stringify(result));
@@ -40,7 +40,7 @@ exports.deleteClub = function(req, res) {
     db.collection('clubs', function(err, collection) {
         collection.remove({'_id': objectId}, {safe:true}, function(err, result) {
             if (err) {
-                res.send({'error':'An error has occurred - ' + err});
+                res.send({'error':'An error has occurred deleting club- ' + err});
             } else {
                 res.jsonp(req.body);
             }

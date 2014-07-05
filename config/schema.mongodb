@@ -42,7 +42,7 @@ db.players.insert([
 	'redCard':0,
 	'email':'bigos@realb.com.mx',
 	'mobile':'442 123 45 67',
-	club: ObjectId("53b393d044deca1a4eeb7da5") 
+	club: ObjectId("53b393d044deca1a4eeb7d8f") 
 },{
 	'playerName':'Mane',
 	'playerNumber':11,
@@ -51,7 +51,7 @@ db.players.insert([
 	'redCard':0,
 	'email':'mane@realb.com.mx',
 	'mobile':'442 123 45 67',
-	club: ObjectId("53b393d044deca1a4eeb7da5") 
+	club: ObjectId("53b393d044deca1a4eeb7d8f") 
 },{
 	'playerName':'Heredia',
 	'playerNumber':10,
@@ -60,7 +60,7 @@ db.players.insert([
 	'redCard':0,
 	'email':'heredia@realb.com.mx',
 	'mobile':'442 123 45 67',
-	club: ObjectId("53b393d044deca1a4eeb7da5") 
+	club: ObjectId("53b393d044deca1a4eeb7d8f") 
 },{
 	'playerName':'Shak',
 	'playerNumber':9,
@@ -69,7 +69,7 @@ db.players.insert([
 	'redCard':0,
 	'email':'shak@realb.com.mx',
 	'mobile':'442 123 45 67',
-	club: ObjectId("53b393d044deca1a4eeb7da5") 
+	club: ObjectId("53b393d044deca1a4eeb7d8f") 
 },{
 	'playerName':'Borget',
 	'playerNumber':23,
@@ -78,7 +78,7 @@ db.players.insert([
 	'redCard':0,
 	'email':'borget@realb.com.mx',
 	'mobile':'442 123 45 67',
-	club: ObjectId("53b393d044deca1a4eeb7da5") 
+	club: ObjectId("53b393d044deca1a4eeb7d8f") 
 }
 ]);
 

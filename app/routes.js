@@ -82,10 +82,13 @@ module.exports = function(app, passport) {
 	// RESTful SERVICES ====================
 	// =====================================
 	app.get('/players/:id', isLoggedIn, players.findPlayers);
+	app.post('/players', isLoggedInAsAdmin, players.saveOrUpdatePlayer);
+	app.delete('/players', isLoggedInAsAdmin, players.deletePlayer);
 	
 	app.get('/clubs', isLoggedIn, clubs.findAllClubs);
 	app.post('/clubs', isLoggedInAsAdmin, clubs.saveOrUpdateClub);
 	app.delete('/clubs', isLoggedInAsAdmin, clubs.deleteClub);
+	
 };
 
 // route middleware to make sure a user is logged in

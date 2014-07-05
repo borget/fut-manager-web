@@ -32,7 +32,7 @@ window.PlayersView = Backbone.View.extend({
 							        type: "POST",
 							        dataType: "jsonp", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
 							        // send the created data items as the "models" service parameter encoded in JSON
-							        data: {data:kendoDatasourceHelper.getInstance().getNewItems(dataSource)},
+							        data: {data:kendoDatasourceHelper.getInstance().getNewItems(dataSource), clubId:window.PlayersView.selectedClub.clubId},
 							        success: function(result) {
 							          // notify the data source that the request succeeded
 							          options.success(result);
@@ -82,7 +82,7 @@ window.PlayersView = Backbone.View.extend({
 		                                                    return true;
 		                                                }
 		                                            }},
-                                       club:{type:"number"}
+                                       club:{type:"string"}
                                     }
                                 }
                             }
@@ -104,7 +104,7 @@ window.PlayersView = Backbone.View.extend({
 						    { name: "save", text: "Guardar" },
 						    { name: "cancel", text: "Cancelar" }
 						],
-	                        columns: [
+	                    columns: [
                         	{ field: "playerName", title: "Nombre"},
                         	{ field: "playerNumber", title: "Número"},
                         	{ field: "goalsCount", title: "Goles"},
@@ -118,11 +118,7 @@ window.PlayersView = Backbone.View.extend({
 						        title: "&nbsp;"
 						    }
                             ],
-                        editable: {
-					    	confirmation: function(e) {
-					        	return  "En verdad te quieres chutar "+ e.playerName +"?";
-					     	}
-					   	},
+                        
                         remove: function (e){
                         	deleteID = e.model.toJSON()._id; 
                         	$.ajax({
@@ -137,7 +133,11 @@ window.PlayersView = Backbone.View.extend({
 							          dataSource.read();
 							        }
 							});                    	
-                        }
+                        },editable: {
+					    	confirmation: function(e) {
+						         return  "En verdad te quieres chutar "+ e.playerName +"?";
+						    }
+						}
                     });
 				});
     	}
@@ -170,7 +170,6 @@ window.PlayersView = Backbone.View.extend({
             function onDataBound() {
                 var listView = $("#kendo-clubs-list").data("kendoListView");
 				listView.select(listView.element.children().first());
-				getSelectedItemAndDisplayGrid(this);
             }
 
             function onChange() {
@@ -180,6 +179,10 @@ window.PlayersView = Backbone.View.extend({
             function getSelectedItemAndDisplayGrid(listView){
             	window.PlayersView.selectedClub = getSelectedItem(listView);
                 if (window.PlayersView.selectedClub != undefined){
+                	var grid = $("#kendo-players-grid").data("kendoGrid");
+					if(grid){
+						grid.destroy();	
+					}
                 	displayPlayersGrid();	
                 }
             }
@@ -190,7 +193,7 @@ window.PlayersView = Backbone.View.extend({
                         return {id:data[$(item).index()]._id,name:data[$(item).index()].clubName};
                     });
 				var selectedItem = {clubId:selected[0].id};
-
+				console.log(selectedItem);
                 return selectedItem;
             }
         });
